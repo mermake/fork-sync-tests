@@ -1,0 +1,25 @@
+on:
+  workflow_dispatch:
+
+jobs:
+  sync_with_upstream:
+    runs-on: ubuntu-latest
+    name: Sync main with upstream latest
+
+    steps:
+    - name: Checkout main
+      uses: actions/checkout@v2
+      with:
+        ref: main
+        
+    - name: Pull upstream changes
+      id: sync
+      uses: aormsby/Fork-Sync-With-Upstream-action@clean-merge
+      with:
+        upstream_repository: aormsby/fork-sync-tests
+        upstream_branch: main
+        target_branch: main
+        git_pull_args: '--no-edit'
+
+    - name: Timestamp
+      run: date
