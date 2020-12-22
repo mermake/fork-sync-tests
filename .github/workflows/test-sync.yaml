@@ -19,7 +19,7 @@ jobs:
         upstream_repository: aormsby/fork-sync-tests
         upstream_branch: main
         target_branch: main
-        git_pull_args: '--no-edit'
+        git_pull_args: '--no-edit --allow-unrelated-histories'
 
     - name: Timestamp
       run: date
