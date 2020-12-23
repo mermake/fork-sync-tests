@@ -14,7 +14,7 @@ jobs:
         
     - name: Pull upstream changes
       id: sync
-      uses: aormsby/Fork-Sync-With-Upstream-action@clean-merge
+      uses: aormsby/Fork-Sync-With-Upstream-action@config-updates
       with:
         upstream_repository: aormsby/fork-sync-tests
         upstream_branch: main
